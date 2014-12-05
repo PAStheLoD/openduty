@@ -41,6 +41,14 @@ STATICFILES_DIRS = (
 )
 ```
 
+#Running on MySQL
+
+Don't forget to use UTF-8 when creating the schema. ([See](https://docs.djangoproject.com/en/1.7/ref/databases/#mysql-notes)) You can fix it after `syncdb` with this:
+
+```
+echo show tables | mysql openduty | xargs -I{} bash -c "echo SET foreign_key_checks = 0; alter table \{} convert to character set utf8 collate utf8_bin | mysql openduty"
+```
+
 #Contributors at Ustream
 - [deathowl](http://github.com/deathowl)
 - [oker](http://github.com/oker1)
