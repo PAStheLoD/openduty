@@ -18,13 +18,15 @@ EMAIL_SETTINGS = {
 TWILIO_SETTINGS = {
     'SID': "TWILIO_ACCOUNT_SID",
     'token': "TWILIO_ACCOUNT_TOKEN",
-    'phone_number': "your_twilio_phone_number",
-    'sms_number': "your_twilio_sms_number",
+    'phone_number': "+1202334423434",
+    'sms_number': "+1202432453243",
+    '_note': 'it is important not to leave spaces or dashes in twilio numbers, but the plus is okay',
     'twiml_url': "http://www.website.org/voice.xml"
 }
 
 SLACK_SETTINGS = {
-    'apikey': "YOUR_SLACK_API_KEY"
+    'apikey': "YOUR_SLACK_API_KEY",
+    '_note':  'you have to generate an API key, it is not the webhook or other integration key/token'
 }
 
 
