@@ -14,7 +14,7 @@ def wbr(value, what, autoescape=None):
 
     parts = string.split(value, what)
 
-    safe_parts = map(esc, parts)
+    safe_parts = list(map(esc, parts))
 
     result = string.join(safe_parts, what + '<wbr/>')
 

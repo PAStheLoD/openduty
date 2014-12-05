@@ -1,5 +1,5 @@
 __author__ = 'deathowl'
-from urllib import quote
+from urllib.parse import quote
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.http import HttpResponseRedirect

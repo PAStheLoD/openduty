@@ -1,4 +1,4 @@
-from __future__ import absolute_import
+
 
 from openduty.celery import app
 from notification.notifier.pushover import PushoverNotifier

@@ -15,6 +15,6 @@ class TwilioSmsNotifier:
             client.sms.messages.create(body=message,
                 to=notification.user_to_notify.profile.phone_number,
                 from_=self.__config['sms_number'])
-            print 'successfully sent the sms'
+            print('successfully sent the sms')
         except :
-            print 'failed to send sms'
+            print('failed to send sms')

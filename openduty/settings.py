@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 DEBUG = False
 TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 BROKER_URL = 'django://'
 
@@ -86,7 +86,7 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
        'rest_framework.permissions.AllowAny',
     ),
-    'PAGINATE_BY': 10
+    'PAGINATE_BY': 30
 }
 
 # Static files (CSS, JavaScript, Images)
@@ -107,19 +107,34 @@ EMAIL_SETTINGS = {
 }
 
 TWILIO_SETTINGS = {
+    'SID': "AC237b0dfa1e9eb82b8786e9be085e670d",
+    'token': "95a44dd7facb8617cd91eb4f36cd804e",
+    'phone_number': "+12027937729",
+    'sms_number': "+12027937729",
+    'twiml_url': "http://duty.end.systems/voice.xml"
 }
 
+
 SLACK_SETTINGS = {
+    'apikey': 'xoxp-2421411819-2421411821-3150151064-fc589d'
 }
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
 DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'openduty',
+        'USER': 'openduty',
+        'PASSWORD': 'dutydutyduty',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
 }
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+SECRET_KEY = 'ö2345u34989uoigjdskj34j98 ösd9f u8s9d 87dsf 76as78a'
 
 import sys
 if 'test' in sys.argv:

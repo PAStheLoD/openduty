@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.db import transaction
 from django.utils.datastructures import MultiValueDictKeyError
 from notification.models import ScheduledNotification
-from escalation_helper import services_where_user_is_on_call
+from .escalation_helper import services_where_user_is_on_call
 
 
 __author__ = 'deathowl'

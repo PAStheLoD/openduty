@@ -51,11 +51,11 @@ class NotificationHelper(object):
                     notification.notifier = method.method
                     notification.send_at = notify_at
                     uri = settings.BASE_URL + "/incidents/details/" + str(incident.id)
-                    notification.message = "A Service is experiencing a problem: " + incident.incident_key + " " + incident.description + ". Handle at: " + uri + " Details: " + incident.details
+                    notification.message = "A Service is experiencing a problem: {} {}. Handle at: {}. Details: {}".format(incident.incident_key, incident.description, uri, incident.details)
 
                     notifications.append(notification)
 
-                    print "Notify %s at %s with method: %s" % (duty_officer.username, notify_at, notification.notifier)
+                    print("Notify {} at {} with method: {}".format(duty_officer.username, notify_at, notification.notifier))
                 else:
                     break
                 method_index += 1
@@ -85,7 +85,7 @@ class NotificationHelper(object):
             notification.message = "A Service is experiencing a problem: " + incident.incident_key + " " + incident.description + ". Handle at: " + uri
 
             notifications.append(notification)
-            print "Notify %s at %s with method: %s" % (user.username, notify_at, notification.notifier)
+            print("Notify %s at %s with method: %s" % (user.username, notify_at, notification.notifier))
             method_index += 1
 
         # todo: error handling

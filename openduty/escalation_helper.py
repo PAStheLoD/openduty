@@ -36,7 +36,7 @@ def services_where_user_is_on_call(user):
     result = []
 
     for service in Service.objects.all():
-        escalation_users = map(lambda user: user.id, get_escalation_for_service(service))
+        escalation_users = [user.id for user in get_escalation_for_service(service)]
         if user.id in escalation_users:
             result.append(service.id)
 
